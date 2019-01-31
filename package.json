@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
+    "build:web": "bsb -make-world -backend js",
+    "build:native": "bsb -make-world -backend native",
+    "start": "./lib/bs/bytecode/indexhot.byte",
+    "start:native": "./lib/bs/native/index.native",
     "clean": "bsb -clean-world"
   },
   "keywords": [
@@ -12,7 +15,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.18"
+    "bs-platform": "^4.0.18",
+    "bsb-native": "^4.0.7000"
   },
   "dependencies": {
     "reprocessing": "^0.1.1"
