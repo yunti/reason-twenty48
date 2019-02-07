@@ -20,11 +20,6 @@ Tsdl@bsansouci/tsdl:
   dependencies:
     sdl2 bsansouci/SDL-mirror#fast
 
-bs-platform@^4.0.18:
-  version "4.0.18"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.18.tgz#d17b8693ba1f714d9b27e0ddb365f2069ba4b8a0"
-  integrity sha512-BwzW0iYHvREqUZIgQxJmdJrxexppLvJxYQ4LLexbhCp7uZU5DIZ5ub4ZHpkCkc8fn8bsXWc+Rrejb3csi+BoAQ==
-
 bsb-native@^4.0.7000:
   version "4.0.7000"
   resolved "https://registry.yarnpkg.com/bsb-native/-/bsb-native-4.0.7000.tgz#04031ae81a3cd53d48868593fe059c1d5752403b"
