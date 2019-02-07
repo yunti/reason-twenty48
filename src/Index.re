@@ -7,9 +7,9 @@ let paddingAround = 20;
 let puzzleSize = 4;
 let puzzleSizePx = (blockSize + padding) * puzzleSize;
 
-let color = Utils.color(~r=184, ~g=173, ~b=162, ~a=255);
+let backgroundColor = Utils.color(~r=184, ~g=173, ~b=162, ~a=255);
 let allColors = [|Utils.color(~r=203, ~g=193, ~b=181, ~a=255)|];
-let backgroundColor = Utils.color(~r=199, ~g=217, ~b=229, ~a=255);
+let backgroundColor1 = Utils.color(~r=199, ~g=217, ~b=229, ~a=255);
 
 type stateT = array(array(int));
 
@@ -19,10 +19,11 @@ let setup = env => {
 };
 
 let draw = (state, env) => {
-  Draw.background(backgroundColor, env);
+  Draw.background(backgroundColor1, env);
+  Draw.fill(backgroundColor, env);
   let xOffset = (Env.width(env) - puzzleSizePx) / 2;
   let yOffset = (Env.height(env) - puzzleSizePx) / 2;
-  Draw.fill(color, env);
+  Draw.stroke(backgroundColor, env);
   Draw.rect(
     ~pos=(xOffset - paddingAround, yOffset - paddingAround),
     ~width=puzzleSizePx + paddingAround * 2,
@@ -34,8 +35,13 @@ let draw = (state, env) => {
       Array.iteri(
         (x, n) => {
           Draw.fill(allColors[n], env);
+          Draw.stroke(allColors[n], env);
+          Draw.strokeWeight(5, env);
           Draw.rect(
-            ~pos=(xOffset + x * (blockSize + padding), yOffset + y * (padding + blockSize)),
+            ~pos=(
+              xOffset + x * (blockSize + padding),
+              yOffset + y * (padding + blockSize),
+            ),
             ~width=blockSize,
             ~height=blockSize,
             env,
